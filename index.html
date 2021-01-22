@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix Landing Page Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <a href="#" class="logo"> <img src="./media/logo.png"></a>
-        <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Latest</a></li>
-            <li><a href="#">My List</a></li>
-        </ul>
+      <a href="#" class="logo"> <img src="logo.png" /></a>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Latest</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
     </header>
-</body>
+    <div class="banner">
+      <img src="bg.jpg" class="bg" />
+      <div class="content">
+        <img src="name.png" class="movieTitle" />
+        <h4>
+          <span>2020</span>
+          <span> <i>12+ </i> </span>
+          <span>1h 55min</span>
+          <span>Action</span>
+        </h4>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ad
+          voluptatem neque officia natus. Perferendis quam eius accusamus
+          aspernatur quia vero reprehenderit consectetur quasi rerum, nesciunt
+          perspiciatis dignissimos velit asperiores. Repellat odit amet nesciunt
+          cum? Nobis eligendi, obcaecati, possimus itaque necessitatibus earum
+          saepe dolores, expedita animi nesciunt sapiente? Aperiam iure amet
+          perspiciatis.
+        </p>
+        <div class="buttons">
+          <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Play</a>
+          <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> My List</a>
+        </div>
+      </div>
+      <a class="play" onclick="toggleVideo();"> <img src="play.png">Watch Trailer</a>
+    </div>
+
+    <div class="trailer">
+      <video src="trailer.mp4" controls="true" autoplay="true"></video>
+      <img src="close.png" class="close" onclick="toggleVideo();">
+    </div>
+
+    <script>
+      function toggleVideo() {
+        const trailer = document.querySelector('.trailer');
+        const video = document.querySelector('video');
+        trailer.classList.toggle('active')
+        video.currentTime = 0;
+        video.pause();
+      }
+    </script>
+  </body>
 </html>
